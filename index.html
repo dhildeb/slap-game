@@ -17,26 +17,28 @@
       <div id="img">
         <img src="//placehold.it/200x400" alt="">
       </div>
-      <span>Health:<span id="health">--</span></span>
+      <div id="hp" class="bg-dark" style="height:24px;">
+        <div class="bg-danger" style="height:24px;"></div>
+      </div>
       <span>Hits:<span id="hits">--</span></span>
       <span>Name:<span id="name">--</span></span>
       <span>Weapon:<span id="weapon">--</span></span>
     </div>
   </header>
   <main id="reset" class="container d-none">
-    <button class="btn btn-success" onclick="morSlap()">Slap some Mor!</button>
+    <button class="btn btn-success" onclick="moreSlap()">Slap some More!</button>
   </main>
   <footer id="controls" class="container">
-    <div class="row justify-content-center p-5">
+    <div class="row justify-content-center p-4">
 
       <button class="btn btn-warning p-3 m-2" onclick="slap()">Slap!!!</button>
-      <button class="btn btn-warning p-3 m-2" onclick="chuck()">Chuck it!!!</button>
-      <button class="btn btn-warning p-3 m-2" onclick="use()">Use it!!!</button>
+      <button id="object1btn" class="btn btn-warning p-3 m-2" onclick="chuck()">Chuck it!!!</button>
+      <button id="object2btn" class="btn btn-warning p-3 m-2" onclick="use()">Use it!!!</button>
     </div>
-    <div class="row justify-content-center p-5">
-      <button class="btn btn-danger p-3 m-2" onclick="getItem('kitten')">pick up a kitten</button>
-      <button class="btn btn-danger p-3 m-2" onclick="getItem('uglystick')">pick up the ugly stick</button>
-      <button class="btn btn-danger p-3 m-2" onclick="getItem('chainsaw')">pick up a chainsaw</button>
+    <div class="row justify-content-center p-4">
+      <button class="btn btn-info p-3 m-2" onclick="getItem('kitten')">pick up a kitten</button>
+      <button class="btn btn-info p-3 m-2" onclick="getItem('uglystick')">pick up the ugly stick</button>
+      <button class="btn btn-info p-3 m-2" onclick="getItem('chainsaw')">pick up a chainsaw</button>
     </div>
   </footer>
 </body>
