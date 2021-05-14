@@ -5,11 +5,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="game.css">
   <title>Slap Game</title>
 </head>
 
-<body>
+<body id="jail">
+  <header id="target" class="container">
+    <div class="row flex-column align-content-center">
+      <div id="img">
+        <img src="//placehold.it/200x400" alt="">
+      </div>
+      <span>Health:<span id="health">--</span></span>
+      <span>Hits:<span id="hits">--</span></span>
+      <span>Name:<span id="name">--</span></span>
+      <span>Weapon:<span id="weapon">--</span></span>
+    </div>
+  </header>
+  <main id="reset" class="container d-none">
+    <button class="btn btn-success" onclick="morSlap()">Slap some Mor!</button>
+  </main>
+  <footer id="controls" class="container">
+    <div class="row justify-content-center p-5">
 
+      <button class="btn btn-warning p-3 m-2" onclick="slap()">Slap!!!</button>
+      <button class="btn btn-warning p-3 m-2" onclick="chuck()">Chuck it!!!</button>
+      <button class="btn btn-warning p-3 m-2" onclick="use()">Use it!!!</button>
+    </div>
+    <div class="row justify-content-center p-5">
+      <button class="btn btn-danger p-3 m-2" onclick="getItem('kitten')">pick up a kitten</button>
+      <button class="btn btn-danger p-3 m-2" onclick="getItem('uglystick')">pick up the ugly stick</button>
+      <button class="btn btn-danger p-3 m-2" onclick="getItem('chainsaw')">pick up a chainsaw</button>
+    </div>
+  </footer>
 </body>
+
+<script src="game.js"></script>
 
 </html>
