@@ -32,13 +32,20 @@
     <div class="row justify-content-center p-4">
 
       <button class="btn btn-warning p-3 m-2" onclick="slap()">Slap!!!</button>
-      <button id="object1btn" class="btn btn-warning p-3 m-2" onclick="chuck()">Chuck it!!!</button>
-      <button id="object2btn" class="btn btn-warning p-3 m-2" onclick="use()">Use it!!!</button>
+
     </div>
     <div class="row justify-content-center p-4">
-      <button class="btn btn-info p-3 m-2" onclick="getItem('kitten')">pick up a kitten</button>
-      <button class="btn btn-info p-3 m-2" onclick="getItem('uglystick')">pick up the ugly stick</button>
-      <button class="btn btn-info p-3 m-2" onclick="getItem('chainsaw')">pick up a chainsaw</button>
+
+      <div id="itemUse" class="d-none">
+        <button class="btn btn-success p-3 m-2" onclick="chuck()">Chuck it!!!</button>
+        <button class="btn btn-success p-3 m-2" onclick="use()">Use it!!!</button>
+      </div>
+
+      <div id="getItem" class="d-none">
+        <button class=" btn btn-info p-3 m-2" onclick="getItem('kitten')">pick up a kitten</button>
+        <button class="btn btn-info p-3 m-2" onclick="getItem('uglystick')">pick up the ugly stick</button>
+        <button class="btn btn-info p-3 m-2" onclick="getItem('chainsaw')">pick up a chainsaw</button>
+      </div>
     </div>
   </footer>
 </body>

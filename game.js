@@ -43,6 +43,7 @@ function slap() {
     target.health--
     target.hits++
   }
+  reset()
   update()
 }
 function chuck() {
@@ -64,6 +65,7 @@ function chuck() {
     loseLimb = true
     target.weapons = ""
   }
+  reset()
   update()
 }
 function use() {
@@ -82,6 +84,7 @@ function use() {
   if (target.weapons == "chainsaw") {
     target.health -= 100
   }
+  reset()
   update()
 }
 
@@ -96,34 +99,44 @@ function update() {
 
   document.getElementById("weapon").innerHTML = ` ${target.weapons}`
 
-  if (target.health < 1) {
-    target.img = 'https://res.cloudinary.com/jerrick/image/upload/v1500745845/mpnw7xekjbdqawa7vcpe.jpg'
-    document.getElementById("name").innerHTML = "KO"
-    if (target.weapons == "chainsaw") {
-      document.getElementById("jail").innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQegGEkQ9BaXG8qxEVKc5WF6Bu4NI-zrRZgYrwdWhge934ydYna-dJZ3OHeWCgJb9HUxBw&usqp=CAU" alt="" style="width:1200px;height:800px">taking your chainsaw you react a horror movie, of course the cops show up and put your massacre to an end</img>`
-      return
-    }
-    console.log(target)
-    reset()
-  }
   template = `
   <img class="img-fluid" src="${target.img}"></img>`
 
   document.getElementById("img").innerHTML = template
+  showOptions()
 }
 
 function reset() {
-  document.getElementById("reset").classList.remove("d-none")
-  document.getElementById("controls").classList.add("d-none")
+  if (target.health < 1) {
+    if (target.weapons == "chainsaw") {
+      document.getElementById("jail").innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQegGEkQ9BaXG8qxEVKc5WF6Bu4NI-zrRZgYrwdWhge934ydYna-dJZ3OHeWCgJb9HUxBw&usqp=CAU" alt="" style="width:1200px;height:800px">taking your chainsaw you reenact something out of a horror movie, of course the cops show up and put your massacre to an end</img>`
+      return
+    }
+    document.getElementById("reset").classList.remove("d-none")
+    document.getElementById("controls").classList.add("d-none")
+    target.img = 'https://res.cloudinary.com/jerrick/image/upload/v1500745845/mpnw7xekjbdqawa7vcpe.jpg'
+    document.getElementById("name").innerHTML = "KO"
+    target.weapons = ""
+  }
 }
 function moreSlap() {
   document.getElementById("reset").classList.add("d-none")
   document.getElementById("controls").classList.remove("d-none")
   target.health = 10
   target.img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbrBVLG6U5hPCLxOFbIBGia7CuVbje8IJELQ&usqp=CAU"
-  target.name = "guy"
   target.weapon = ""
   target.hits = 0
   update()
 }
+
+function showOptions() {
+  if (target.weapons === "") {
+    document.getElementById("getItem").classList.remove("d-none")
+    document.getElementById("itemUse").classList.add("d-none")
+  } else {
+    document.getElementById("getItem").classList.add("d-none")
+    document.getElementById("itemUse").classList.remove("d-none")
+  }
+}
+
 update()
